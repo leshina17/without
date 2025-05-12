@@ -171,3 +171,46 @@ now - 0 1 3 7 11 4 18 -1 20 8 (поменяли местами 1 и 10)
 
 
 */
+
+
+
+
+
+
+/*
+12 05 2025
+
+bool list_hash_table :: is full(){
+bool result = false;
+try {
+tab_record* a = new tab_record();
+delete a;
+}
+catch (const char*){res = true;}
+return res;
+}
+
+bool list_hash_table::go_next(){
+if (!is_tab_ended()){
+bool flag = false;
+while (_lists[_curlist].empty()){
+_curlist ++;
+}
+_curelem ++;
+if (_curelem==_list[_curlist].end()){
+_curlist++;
+_curelem = _lists[_curlist].begin();
+flag = true;
+}
+}
+return is_table_ended();
+
+}
+
+Key list_hash_table:: get_key() const{ //pdatvalue list_hash_table::getvalue() const {тоже самое что и в этом только в конце get_data;}
+return (*_curelem)->get_key();
+
+
+}
+не факт что так
+*/
