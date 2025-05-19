@@ -211,6 +211,57 @@ Key list_hash_table:: get_key() const{ //pdatvalue list_hash_table::getvalue() c
 return (*_curelem)->get_key();
 
 
-}
+}   
 не факт что так
+*/
+
+/*  19.05.25
+using PTreeNode = TreeNode*;
+
+class tree_node: public dtabrecord{
+protected: 
+PTreeNode _pleft;
+PTreeNode _pright;
+
+public:
+TreeNode(Key key = "", pdatavalue data = nullptr, PTreenode pright = nullptr, PTreeNode pleft = nullptr){
+_pleft = pleft;
+_pright = pright;
+}
+
+PTreeNode const getleft(){
+return _pleft;}
+
+PTreeNode const getright(){
+return _pright;}
+
+friend class TreeTable;
+friend BalancedTreeTable;
+
+virtual PDatValue getcopy(){
+PTreeNode copyTree = new TreNode (_key, _data);
+return copyTree;
+}
+
+}
+
+другой файл stack 
+class treetable: public table{
+protested: 
+PTreeNode _proot;
+PTreeNode _pcur;
+PTreeNode *_ppref; адрес вершины дерева 
+std::stack<PTreeNode> _stack;
+size_t _curPOos;
+void PrintTreeTable(std::ostream &OS, PTreeNode pNode);
+void DrawTreeTable(PTreeNode pNode, size_t lvl);
+void DeleteTreeTable(PTreeNode pNode);
+
+public:
+TreeTable():Table(){
+_proot = nullptr;
+_pcur = nullptr;
+_ppref = nullptr;
+_curpos = 0;}
+};
 */
